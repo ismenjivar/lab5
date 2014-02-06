@@ -3,6 +3,8 @@
 // Call this function when the page loads (the "ready" event)
 $(document).ready(function() {
 	initializePage();
+
+	$(".friend h3").click(changeName);
 })
 
 /*
@@ -10,6 +12,13 @@ $(document).ready(function() {
  */
 function initializePage() {
 	console.log("Javascript connected!");
+}
+
+function changeName(e) {
+	e.preventDefault();
+	
+	var new_name = anagrammedName($(this).text());
+	$(this).text(new_name);
 }
 
 function anagrammedName(name) {
